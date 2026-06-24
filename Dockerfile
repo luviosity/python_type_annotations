@@ -17,9 +17,10 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 # Copy project sources
 COPY pyproject.toml uv.lock ./
 COPY challenge/ ./challenge/
+COPY Makefile ./
 
 # Activate venv
 ENV PATH="/app/.venv/bin:$PATH"
 
 # Run the type check by default
-CMD ["mypy", "challenge/"]
+CMD ["make", "typing-local"]
