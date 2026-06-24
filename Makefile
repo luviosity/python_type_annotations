@@ -10,4 +10,4 @@ typing:
 
 # Same check without Docker, for quick local iteration.
 typing-local:
-	uv run python scripts/check_types.py
+	uv run mypy challenge/
